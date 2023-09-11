@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Portfolio</title>
+</head>
+<body>
+    <h1>Your Name's Portfolio</h1>
+    <ul>
+        <li><a href="#project1">Project 1</a></li>
+        <li><a href="#project2">Project 2</a></li>
+        <!-- Add more project links here -->
+    </ul>
+
+    <!-- Project 1 -->
+    <div id="project1">
+        <h2>Project 1 Title</h2>
+        <p>Project 1 Description.</p>
+        <a href="project1.pdf" target="_blank">View PDF</a>
+    </div>
+
+    <!-- Project 2 -->
+    <div id="project2">
+        <h2>Project 2 Title</h2>
+        <p>Project 2 Description.</p>
+        <a href="project2.pdf" target="_blank">View PDF</a>
+    </div>
+    <!-- Add more project sections as needed -->
+
+</body>
+</html>
