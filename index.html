@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Fancy Portfolio</title>
+    <title>My Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-color: #f7f7f7;
             margin: 0;
             padding: 0;
         }
 
         h1 {
             text-align: center;
-            color: #333;
+            color: #ff5733; /* Changed title color to orange */
             font-size: 36px;
             margin-top: 20px;
         }
 
         ul {
-            list-style-type: none;
-            padding: 0;
-            text-align: center;
+            list-style-type: disc; /* Use disc bullets for lists */
+            padding-left: 20px; /* Add some left padding for indentation */
         }
 
         li {
-            display: inline;
             margin: 10px;
         }
 
@@ -37,7 +35,7 @@
             color: #0056b3;
         }
 
-        #project1, #project2 {
+        .project {
             background-color: #fff;
             padding: 20px;
             margin: 20px auto;
@@ -50,36 +48,29 @@
             font-size: 24px;
         }
 
-        p {
+        p, strong {
             color: #555;
             font-size: 16px;
             line-height: 1.5;
         }
 
-        strong {
-            font-weight: bold;
-        }
-
-        ul {
+        .objectives, .key-achievements {
             margin-top: 10px;
+            padding-left: 20px; /* Added indentation */
         }
 
-        ul li {
-            margin-left: 20px;
-        }
-
-        a.view-pdf {
+        .view-pdf {
             display: inline-block;
             margin-top: 10px;
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #ff5733; /* Changed button color to orange */
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
         }
 
-        a.view-pdf:hover {
-            background-color: #0056b3;
+        .view-pdf:hover {
+            background-color: #ff4500; /* Darker orange on hover */
         }
     </style>
 </head>
@@ -92,18 +83,18 @@
     </ul>
 
     <!-- Project 1 -->
-    <div id="project1">
+    <div id="project1" class="project">
         <h2>Project 1: Bachelor Thesis - Asymptotic Normality for Tessellation-based Betti Numbers</h2>
         <p>In this project, we explore the fascinating realm of topological data analysis (TDA), a powerful tool for unraveling the intricate structures within complex datasets. Our focus centers on persistent Betti numbers, a novel approach that offers a multi-scale perspective on topological changes.</p>
         <p><strong>Objectives:</strong></p>
-        <ul>
+        <ul class="objectives"> <!-- Added class for styling -->
             <li>Explore the computation of persistent Betti numbers.</li>
             <li>Establish a central limit theorem for persistent Betti numbers for a general filtration satisfying some conditions. The conditions are, for example, met by the Cech filtration.</li>
             <li>Establish another central limit theorem for persistent Betti numbers for a Voronoi tessellation-adapted filtration.</li>
         </ul>
         <p><strong>Significance:</strong> These theorems lay the groundwork for statistical analysis and hypothesis testing within computational topology. They enable us to gain deeper insights into the topological properties of datasets.</p>
         <p><strong>Methodology:</strong></p>
-        <ul>
+        <ul class="objectives"> <!-- Added class for styling -->
             <li>Conduct simulations to study the behavior of persistent Betti numbers under varying parameters.</li>
             <li>Propose a hypothesis test to determine whether the distribution of data points follows a fixed distribution or a Poisson distribution.</li>
         </ul>
@@ -114,17 +105,17 @@
     </div>
 
     <!-- Project 2 -->
-    <div id="project2">
+    <div id="project2" class="project">
         <h2>Project 2: Improving Performance of R's function rgeom</h2>
         <p>In this project, I focused on optimizing the performance of R's built-in function rgeom, which is used for sampling from a geometric distribution. Geometric distribution plays a crucial role in various statistical and probabilistic applications, and having an efficient implementation is essential.</p>
         <p><strong>Objectives:</strong></p>
-        <ul>
+        <ul class="objectives"> <!-- Added class for styling -->
             <li>Develop a faster algorithm for sampling from the geometric distribution by utilizing the inverse transform method.</li>
             <li>Benchmark the newly developed algorithm against R's native rgeom function to assess performance improvements.</li>
             <li>Ensure consistency in output and handling of invalid inputs to match the behavior of rgeom.</li>
         </ul>
         <p><strong>Key Achievements:</strong></p>
-        <ul>
+        <ul class="key-achievements"> <!-- Added class for styling -->
             <li>Implemented a new my_rgeom function that outperforms R's rgeom by approximately 30%, making it a valuable addition for users working with geometric distributions.</li>
             <li>Ensured that my_rgeom maintains the same output behavior and data type handling as rgeom, providing a seamless transition for users.</li>
         </ul>
