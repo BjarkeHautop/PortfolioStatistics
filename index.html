@@ -2,24 +2,44 @@
 <html>
 <head>
     <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Roboto", sans-serif;
             background-color: #f7f7f7;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: flex-start; /* Align content to the left */
+            align-items: flex-start; /* Align content to the top */
+        }
+
+        #sidebar {
+            position: fixed;
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            height: 100%;
+            overflow-y: auto;
+            z-index: 1;
+        }
+
+        #content {
+            margin-left: 220px; /* Adjust margin to create space for sidebar */
+            padding: 20px;
+            width: calc(100% - 220px); /* Calculate the content width */
         }
 
         h1 {
             text-align: center;
-            color: #ff5733; /* Changed title color to orange */
+            color: #ff5733;
             font-size: 36px;
             margin-top: 20px;
         }
 
         ul {
-            list-style-type: disc; /* Use disc bullets for lists */
-            padding-left: 20px; /* Add some left padding for indentation */
+            list-style-type: disc;
+            padding-left: 20px;
         }
 
         li {
@@ -38,7 +58,7 @@
         .project {
             background-color: #fff;
             padding: 20px;
-            margin: 20px auto;
+            margin: 20px auto; /* Center the project boxes horizontally */
             max-width: 800px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -56,75 +76,92 @@
 
         .objectives, .key-achievements {
             margin-top: 10px;
-            padding-left: 20px; /* Added indentation */
+            padding-left: 20px;
         }
 
         .view-pdf {
             display: inline-block;
             margin-top: 10px;
             padding: 10px 20px;
-            background-color: #ff5733; /* Changed button color to orange */
+            background-color: #ff5733;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
         }
 
         .view-pdf:hover {
-            background-color: #ff4500; /* Darker orange on hover */
+            background-color: #ff4500;
+        }
+
+        @media screen and (max-width: 768px) {
+            #sidebar {
+                width: 100%; /* Make the sidebar take up the full width on smaller screens */
+                position: relative;
+                height: auto;
+                overflow-y: visible;
+            }
+
+            #content {
+                margin-left: 0; /* Remove the margin for content */
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>My Portfolio</h1>
-    <ul>
-        <li><a href="#project1">Project 1</a></li>
-        <li><a href="#project2">Project 2</a></li>
-        <!-- Add more project links here -->
-    </ul>
-
-    <!-- Project 1 -->
-    <div id="project1" class="project">
-        <h2>Project 1: Bachelor Thesis - Asymptotic Normality for Tessellation-based Betti Numbers</h2>
-        <p>In this project, we explore the fascinating realm of topological data analysis (TDA), a powerful tool for unraveling the intricate structures within complex datasets. Our focus centers on persistent Betti numbers, am approach that offers a multi-scale perspective on topological changes.</p>
-        <p><strong>Objectives:</strong></p>
-        <ul class="objectives"> <!-- Added class for styling -->
-            <li>Explore the computation of persistent Betti numbers.</li>
-            <li>Establish a central limit theorem for persistent Betti numbers for a general filtration satisfying some conditions. The conditions are, for example, met by the Cech filtration.</li>
-            <li>Establish another central limit theorem for persistent Betti numbers for a Voronoi tessellation-adapted filtration.</li>
+    <div id="sidebar">
+        <h1>My Portfolio</h1>
+        <ul>
+            <li><a href="#project1">Project 1</a></li>
+            <li><a href="#project2">Project 2</a></li>
+            <!-- Add more project links here -->
         </ul>
-        <p><strong>Significance:</strong> These theorems lay the groundwork for statistical analysis and hypothesis testing within computational topology. They enable us to gain deeper insights into the topological properties of datasets.</p>
-        <p><strong>Methodology:</strong></p>
-        <ul class="objectives"> <!-- Added class for styling -->
-            <li>Conduct simulations to study the behavior of persistent Betti numbers under varying parameters.</li>
-            <li>Propose a hypothesis test to determine whether the distribution of data points follows a fixed distribution or a Poisson distribution.</li>
-        </ul>
-        <p><strong>Key Findings:</strong> The research showcases the effectiveness of Voronoi tessellation in analyzing the topological structure of datasets. It provides valuable insights for understanding complex data through a topological lens.</p>
-        <a href="https://raw.githubusercontent.com/BjarkeHautop/PortfolioStatistics/main/Bachelor.pdf" target="_blank" class="view-pdf">View PDF in Danish</a>
-        or
-        <a href="https://raw.githubusercontent.com/BjarkeHautop/PortfolioStatistics/main/Bachelor_English.pdf" target="_blank" class="view-pdf">View PDF in English</a>
     </div>
 
-    <!-- Project 2 -->
-    <div id="project2" class="project">
-        <h2>Project 2: Improving Performance of R's function rgeom</h2>
-        <p>In this project, I focused on optimizing the performance of R's built-in function rgeom, which is used for sampling from a geometric distribution. Geometric distribution plays a crucial role in various statistical and probabilistic applications, and having an efficient implementation is essential.</p>
-        <p><strong>Objectives:</strong></p>
-        <ul class="objectives"> <!-- Added class for styling -->
-            <li>Develop a faster algorithm for sampling from the geometric distribution by utilizing the inverse transform method.</li>
-            <li>Benchmark the newly developed algorithm against R's native rgeom function to assess performance improvements.</li>
-            <li>Ensure consistency in output and handling of invalid inputs to match the behavior of rgeom.</li>
-        </ul>
-        <p><strong>Key Achievements:</strong></p>
-        <ul class="key-achievements"> <!-- Added class for styling -->
-            <li>Implemented a new my_rgeom function that outperforms R's rgeom by approximately 30%, making it a valuable addition for users working with geometric distributions.</li>
-            <li>Ensured that my_rgeom maintains the same output behavior and data type handling as rgeom, providing a seamless transition for users.</li>
-        </ul>
-        <p><strong>Significance:</strong> This project contributes to the R programming community by offering an improved and faster alternative for generating random numbers from the geometric distribution. It enhances the overall efficiency of statistical simulations and analyses.</p>
-        <a href="https://bjarkehautop.github.io/PortfolioStatistics/Improve%20performance%20of%20rgeom.html
-" target="_blank" class="view-pdf">View Project Details (HTML)</a>
-    </div>
-    <!-- Add more project sections as needed -->
+    <div id="content">
+        <!-- Project 1 -->
+    	<div id="project1" class="project">
+        	<h2>Project 1: Bachelor Thesis - Asymptotic Normality for Tessellation-based Betti Numbers</h2>
+        	<p>In this project, we explore the fascinating realm of topological data analysis (TDA), a powerful tool for unraveling the intricate structures within complex datasets. Our focus centers on persistent Betti numbers, am approach that offers a multi-scale perspective on topological changes.</p>
+        	<p><strong>Objectives:</strong></p>
+        	<ul class="objectives"> <!-- Added class for styling -->
+            		<li>Explore the computation of persistent Betti numbers.</li>
+            		<li>Establish a central limit theorem for persistent Betti numbers for a general filtration satisfying some conditions. The conditions are, for example, met by the Cech filtration.</li>
+            		<li>Establish another central limit theorem for persistent Betti numbers for a Voronoi tessellation-adapted filtration.</li>
+        	</ul>
+        	<p><strong>Significance:</strong> These theorems lay the groundwork for statistical analysis and hypothesis testing within computational topology. They enable us to gain deeper insights into the topological properties of datasets.</p>
+        	<p><strong>Methodology:</strong></p>
+        	<ul class="objectives"> <!-- Added class for styling -->
+            		<li>Conduct simulations to study the behavior of persistent Betti numbers under varying parameters.</li>
+            		<li>Propose a hypothesis test to determine whether the distribution of data points follows a fixed distribution or a Poisson distribution.</li>
+        	</ul>
+        	<p><strong>Key Findings:</strong> The research showcases the effectiveness of Voronoi tessellation in analyzing the topological structure of datasets. It provides valuable insights for understanding complex data through a topological lens.</p>
+        	<a href="https://raw.githubusercontent.com/BjarkeHautop/PortfolioStatistics/main/Bachelor.pdf" target="_blank" class="view-pdf">View PDF in Danish</a>
+        	or
+        	<a href="https://raw.githubusercontent.com/BjarkeHautop/PortfolioStatistics/main/Bachelor_English.pdf" target="_blank" class="view-pdf">View PDF in English</a>
+    	</div>
 
-    <!-- Add more project sections as needed -->
+    	<!-- Project 2 -->
+    	<div id="project2" class="project">
+        	<h2>Project 2: Improving Performance of R's function rgeom</h2>
+        	<p>In this project, I focused on optimizing the performance of R's built-in function rgeom, which is used for sampling from a geometric distribution. Geometric distribution plays a crucial role in various statistical and probabilistic applications, and having an efficient implementation is essential.</p>
+        	<p><strong>Objectives:</strong></p>
+        	<ul class="objectives"> <!-- Added class for styling -->
+            		<li>Develop a faster algorithm for sampling from the geometric distribution by utilizing the inverse transform method.</li>
+            		<li>Benchmark the newly developed algorithm against R's native rgeom function to assess performance improvements.</li>
+            		<li>Ensure consistency in output and handling of invalid inputs to match the behavior of rgeom.</li>
+        	</ul>
+        	<p><strong>Key Achievements:</strong></p>
+        	<ul class="key-achievements"> <!-- Added class for styling -->
+            		<li>Implemented a new my_rgeom function that outperforms R's rgeom by approximately 30%, making it a valuable addition for users working with geometric distributions.</li>
+            		<li>Ensured that my_rgeom maintains the same output behavior and data type handling as rgeom, providing a seamless transition for users.</li>
+        	</ul>
+        	<p><strong>Significance:</strong> This project contributes to the R programming community by offering an improved and faster alternative for generating random numbers from the geometric distribution. It enhances the overall efficiency of statistical simulations and analyses.</p>
+        	<a href="https://bjarkehautop.github.io/PortfolioStatistics/Improve%20performance%20of%20rgeom.html" target="_blank" class="view-pdf">View Project Details (HTML)</a>
+    	</div>
+    	<!-- Add more project sections as needed -->
+
+    	<!-- Add more project sections as needed -->
+    </div>
 </body>
 </html>
