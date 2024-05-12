@@ -201,9 +201,9 @@ We see that the p-value for the treatment, doses of estrogen (rx), is below $0.0
 
 ##  Checking Proportional Hazards
 
-A Cox model should have proportional hazards, since if we look at two individuals with covariate values $\boldsymbol{Z}$ and $\boldsymbol{Z}*$ then the ratio
+A Cox model should have proportional hazards, since if we look at two individuals with covariate values $\boldsymbol{X}$ and $\boldsymbol{X}^*$ then the ratio
 of their hazard rates is
-$$\frac{h(t \vert \boldsymbol{X})}{h(t \vert \boldsymbol{X}^*}=\exp\Big[\sum_{k=1}^p \beta_k(X_k-X_{k^*})\Big],$$
+$$\frac{h(t \vert \boldsymbol{X})}{h(t \vert \boldsymbol{X}^*)}=\exp\Big[\sum_{k=1}^p \beta_k(X_k-X_{k^*})\Big],$$
 which is a constant. We can test this assumption using 
 ```{r}
 z <- predict(f, type = 'terms')
