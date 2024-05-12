@@ -45,6 +45,7 @@ There are 354 deaths among the 502 patients and we will use a multivariate survi
 
 ```{r, message=F}
 require(Hmisc)
+library(survival)
 require(rms)
 require(scales)
 require(ggplot2)
@@ -204,18 +205,12 @@ We see that the p-value for the treatment, doses of estrogen (rx), is below $0.0
 A Cox model should have proportional hazards, since if we look at two individuals with covariate values $\boldsymbol{X}$ and $\boldsymbol{X}^*$ then the ratio
 of their hazard rates is
 $$\frac{h(t \vert \boldsymbol{X})}{h(t \vert \boldsymbol{X}^*)}=\exp\Big[\sum_{k=1}^p \beta_k(X_k-X_{k^*})\Big],$$
-which is a constant. We can test this assumption using 
+which is a constant. We can test this assumption using scaled Schoenfeld residuals separately for each predictor and test the PH assumption using the "correlation with time” test. 
+Smoothed trends in the residuals are also plotted.
+
 ```{r}
 z <- predict(f, type = 'terms')
 f.short <- cph(S ~ z, x=TRUE, y= TRUE)
-```
-
-Now we compute scaled Schoenfeld residuals separately for each predictor
-and test the PH assumption using the "correlation with time” test. Also plot
-smoothed trends in the residuals.
-
-```{r}
-library(survival)
 phtest <- cox.zph(f.short, transform = 'identity', terms=F)
 phtest
 ```
