@@ -1,3 +1,3 @@
 # PortfolioStatistics
 
-This is my github page for my (work in progress) portfolio. To view it go to https://bjarkehautop.github.io/PortfolioStatistics/.
+This is my old website which is being kept up for a short while more. Visit https://github.com/BjarkeHautop/Website for the new one.
